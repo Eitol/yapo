@@ -1,0 +1,591 @@
+{
+  "all_categories": {
+    "color": "FFFFFF",
+    "icon": "https://www.yapo.cl/img/transparent.gif",
+    "label": "Todas las categorías"
+  },
+  "categories": [
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "1220",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "1220"
+            ]
+          },
+          "label": "Comprar"
+        },
+        {
+          "code": "1240",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "1240"
+            ]
+          },
+          "label": "Arrendar"
+        },
+        {
+          "code": "1260",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "1260"
+            ]
+          },
+          "label": "Arriendo de temporada"
+        }
+      ],
+      "code": "1000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "1000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/inmuebles.png",
+      "label": "Inmuebles"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "2020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2020"
+            ]
+          },
+          "label": "Autos, camionetas y 4x4"
+        },
+        {
+          "code": "2060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2060"
+            ]
+          },
+          "label": "Motos"
+        },
+        {
+          "code": "2040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2040"
+            ]
+          },
+          "label": "Buses, camiones y furgones"
+        },
+        {
+          "code": "2100",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2100"
+            ]
+          },
+          "label": "Accesorios y piezas para vehículos"
+        },
+        {
+          "code": "2080",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2080"
+            ]
+          },
+          "label": "Barcos, lanchas y aviones"
+        },
+        {
+          "code": "2120",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "2120"
+            ]
+          },
+          "label": "Otros vehículos"
+        }
+      ],
+      "code": "2000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "2000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/vehiculos.png",
+      "label": "Vehículos"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "5020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "5020"
+            ]
+          },
+          "label": "Muebles"
+        },
+        {
+          "code": "5040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "5040"
+            ]
+          },
+          "label": "Electrodomésticos"
+        },
+        {
+          "code": "5060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "5060"
+            ]
+          },
+          "label": "Jardín, herramientas y exteriores"
+        },
+        {
+          "code": "5160",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "5160"
+            ]
+          },
+          "label": "Otros artículos del hogar"
+        }
+      ],
+      "code": "5000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "5000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/hogar.png",
+      "label": "Hogar"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "4020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "4020"
+            ]
+          },
+          "label": "Moda y vestuario"
+        },
+        {
+          "code": "4040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "4040"
+            ]
+          },
+          "label": "Bolsos, bisutería y accesorios"
+        },
+        {
+          "code": "4060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "4060"
+            ]
+          },
+          "label": "Salud y belleza"
+        },
+        {
+          "code": "4080",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "4080"
+            ]
+          },
+          "label": "Calzado"
+        }
+      ],
+      "code": "4000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "4000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/fashion-beauty-health.png",
+      "label": "Moda, calzado, belleza y salud"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "9020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "9020"
+            ]
+          },
+          "label": "Vestuario futura mamá y niños"
+        },
+        {
+          "code": "9040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "9040"
+            ]
+          },
+          "label": "Juguetes"
+        },
+        {
+          "code": "9060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "9060"
+            ]
+          },
+          "label": "Coches y artículos infantiles"
+        }
+      ],
+      "code": "9000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "9000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/futura-mama.png",
+      "label": "Futura mamá, bebés y niños"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "6140",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6140"
+            ]
+          },
+          "label": "Animales y sus accesorios"
+        },
+        {
+          "code": "6020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6020"
+            ]
+          },
+          "label": "Deportes, gimnasia y accesorios"
+        },
+        {
+          "code": "6060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6060"
+            ]
+          },
+          "label": "Bicicletas, ciclismo y accesorios"
+        },
+        {
+          "code": "6180",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6180"
+            ]
+          },
+          "label": "Hobbies y outdoor"
+        },
+        {
+          "code": "6080",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6080"
+            ]
+          },
+          "label": "Instrumentos musicales y accesorios"
+        },
+        {
+          "code": "6100",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6100"
+            ]
+          },
+          "label": "Música y películas (DVDs, etc.)"
+        },
+        {
+          "code": "6120",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6120"
+            ]
+          },
+          "label": "Libros y revistas"
+        },
+        {
+          "code": "6160",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "6160"
+            ]
+          },
+          "label": "Arte, antigüedades y colecciones"
+        }
+      ],
+      "code": "6000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "6000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/tiempo-libre.png",
+      "label": "Tiempo libre"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "3040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "3040"
+            ]
+          },
+          "label": "Computadores y accesorios"
+        },
+        {
+          "code": "3060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "3060"
+            ]
+          },
+          "label": "Celulares, teléfonos y accesorios"
+        },
+        {
+          "code": "3020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "3020"
+            ]
+          },
+          "label": "Consolas, videojuegos y accesorios"
+        },
+        {
+          "code": "3080",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "3080"
+            ]
+          },
+          "label": "Audio, TV, video y fotografía"
+        }
+      ],
+      "code": "3000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "3000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/computadores.png",
+      "label": "Computadores & electrónica"
+    },
+    {
+      "all_label": "Toda la categoría",
+      "categories": [
+        {
+          "code": "7020",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "7020"
+            ]
+          },
+          "label": "Ofertas de empleo"
+        },
+        {
+          "code": "7040",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "7040"
+            ]
+          },
+          "label": "Busco empleo"
+        },
+        {
+          "code": "7060",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "7060"
+            ]
+          },
+          "label": "Servicios"
+        },
+        {
+          "code": "7080",
+          "filter_value": {
+            "keys": [
+              "category"
+            ],
+            "values": [
+              "7080"
+            ]
+          },
+          "label": "Negocios, maquinaria y construcción"
+        }
+      ],
+      "code": "7000",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "7000"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/empleos.png",
+      "label": "Servicios, negocios y empleo"
+    },
+    {
+      "code": "8020",
+      "color": "F2F2F2",
+      "filter_value": {
+        "keys": [
+          "category"
+        ],
+        "values": [
+          "8020"
+        ]
+      },
+      "icon": "https://www.yapo.cl/img/others.png",
+      "label": "Otros productos"
+    }
+  ]
+}
