@@ -9,8 +9,9 @@ It is done as a practice from my Pentester course.
 ### Usage
 
 ```go
-c := NewClient(Options{})
-adsList, err := c.ListAds(ListAdsOptions{})
+c := client.NewClient(client.Options{})
+opts := client.ListAdsOptions{}
+adsList, nextPageId, err := c.ListAds(opts)
 ```
 
 It will display a list of announcements.
