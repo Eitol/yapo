@@ -7,6 +7,7 @@ import (
 	"github.com/Eitol/yapo/client/schema"
 	"github.com/Eitol/yapo/pkg/iocloser"
 	"io/ioutil"
+	"net/http"
 )
 
 const (
@@ -22,6 +23,8 @@ const (
 	NextPageQueryParamKey   = "o"
 	LimitQueryParamKey      = "lim"
 )
+
+const UserAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 
 type ListAdsOptions struct {
 	NextPage   *string
@@ -106,8 +109,17 @@ func doRequest(endpoint string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	result, err := httpClient.Get(APIHost + endpoint)
+	url := APIHost + endpoint
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, errordict.ErrBuildingTheRequest.Cause(err)
+	}
+	req.Header = http.Header{
+		"User-Agent": []string{UserAgent},
+	}
+	result, err := httpClient.Do(req)
 	defer iocloser.Close(result.Body)
+	defer iocloser.Close(req.Body)
 	if err != nil {
 		return nil, errordict.ErrExecutingTheRequest.Cause(err)
 	}
