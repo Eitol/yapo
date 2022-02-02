@@ -32,11 +32,10 @@ type ListAdsOptions struct {
 type Client interface {
 	ListCategories() ([]*schema.Category, error)
 	ListAds(opts ListAdsOptions) ([]*schema.Ad, string, error)
-	GetAdDetail(id string) (*schema.Ad, error)
 }
 
 type Options struct {
-	apiProxy ApiProxy
+	apiProxy APIProxy
 }
 
 func NewClient(opts Options) Client {
@@ -49,18 +48,13 @@ func NewClient(opts Options) Client {
 type client struct {
 	nextPageID string
 	opts       Options
-	apiProxy   ApiProxy
-}
-
-func (c client) GetAdDetail(id string) (*schema.Ad, error) {
-	//TODO implement me
-	panic("implement me")
+	apiProxy   APIProxy
 }
 
 func (c client) ListCategories() ([]*schema.Category, error) {
 	body, err := c.opts.apiProxy.DoRequest(ListCategoriesEndpoint)
 	if err != nil {
-		return nil, err
+		return nil, errordict.ErrSendingTheRequest.Cause(err)
 	}
 	out, err := parseCategoryResponse(body)
 	if err != nil {
@@ -73,7 +67,7 @@ func (c client) ListAds(opts ListAdsOptions) ([]*schema.Ad, string, error) {
 	endpoint := c.buildAdListEndpoint(opts)
 	body, err := c.opts.apiProxy.DoRequest(endpoint)
 	if err != nil {
-		return nil, "", err
+		return nil, "", errordict.ErrSendingTheRequest.Cause(err)
 	}
 	out, nextPage, err := parseAdsListResponse(body)
 	if err != nil {
@@ -103,9 +97,8 @@ func (c client) buildAdListEndpoint(opts ListAdsOptions) string {
 func (c client) getPageSize(opts ListAdsOptions) uint {
 	if opts.SearchSize == 0 {
 		return SearchPageSize
-	} else {
-		return opts.SearchSize
 	}
+	return opts.SearchSize
 }
 
 func doRequest(endpoint string) ([]byte, error) {
@@ -114,10 +107,10 @@ func doRequest(endpoint string) ([]byte, error) {
 		return nil, err
 	}
 	result, err := httpClient.Get(APIHost + endpoint)
+	defer iocloser.Close(result.Body)
 	if err != nil {
 		return nil, errordict.ErrExecutingTheRequest.Cause(err)
 	}
-	defer iocloser.Close(result.Body)
 	body, err := ioutil.ReadAll(result.Body)
 	if err != nil {
 		return nil, errordict.ErrReadingTheResponseBody.Cause(err)

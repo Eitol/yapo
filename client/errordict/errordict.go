@@ -15,4 +15,7 @@ var (
 	ErrExecutingTheRequest = cerrors.Error{
 		Code: "ErrExecutingTheRequest",
 	}
+	ErrSendingTheRequest = cerrors.Error{
+		Code: "ErrSendingTheRequest",
+	}
 )

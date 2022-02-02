@@ -4,26 +4,21 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"github.com/Eitol/yapo/pkg/cerrors"
-	"io/ioutil"
 )
 
 var (
 	ErrLoadingX509KeyPair = cerrors.Error{
 		Code: "ErrLoadingX509KeyPair",
 	}
-
-	ErrReadingTheLocalCaCertificate = cerrors.Error{
-		Code: "ErrReadingTheLocalCaCertificate",
-	}
 )
 
-func NewClientValidationTLSConfig(clientCertFile, clientKeyFile, caCertFile string) (*tls.Config, error) {
-	cert, err := tls.LoadX509KeyPair(clientCertFile, clientKeyFile)
+func NewClientValidationTLSConfig(clientCert, clientKey, caCert string) (*tls.Config, error) {
+	cert, err := tls.X509KeyPair([]byte(clientCert), []byte(clientKey))
 	if err != nil {
 		return nil, ErrLoadingX509KeyPair.Cause(err)
 	}
 
-	caCertPool, err := buildCaCertPool(caCertFile)
+	caCertPool, err := buildCaCertPool(caCert)
 	if err != nil {
 		return nil, err
 	}
@@ -32,16 +27,9 @@ func NewClientValidationTLSConfig(clientCertFile, clientKeyFile, caCertFile stri
 	return tlsConfig, nil
 }
 
-func buildCaCertPool(caCertFile string) (*x509.CertPool, error) {
-	caCert, err := ioutil.ReadFile(caCertFile)
-	if err != nil {
-		return nil, ErrReadingTheLocalCaCertificate.Cause(err).WithMeta(map[string]string{
-			"caCertFile": caCertFile,
-		})
-	}
-
+func buildCaCertPool(caCert string) (*x509.CertPool, error) {
 	caCertPool := x509.NewCertPool()
-	caCertPool.AppendCertsFromPEM(caCert)
+	caCertPool.AppendCertsFromPEM([]byte(caCert))
 	return caCertPool, nil
 }
 

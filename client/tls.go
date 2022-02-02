@@ -2,16 +2,10 @@ package client
 
 import (
 	"crypto/tls"
+	"github.com/Eitol/yapo/client/certs"
 	"github.com/Eitol/yapo/client/errordict"
 	"github.com/Eitol/yapo/pkg/tlsconfig"
 	"net/http"
-)
-
-const (
-	certPath         = "../certs"
-	clientCertPath   = certPath + "/client.cer.pem"
-	clientKeyPath    = certPath + "/client.key.pem"
-	serverCaFilePath = certPath + "/server.cer.pem"
 )
 
 func buildHttpClient() (*http.Client, error) {
@@ -32,9 +26,9 @@ func buildClientFromTlSConfig(tlsConfig *tls.Config) *http.Client {
 
 func buildCfg() (*tls.Config, error) {
 	tlsConfig, err := tlsconfig.NewClientValidationTLSConfig(
-		clientCertPath,
-		clientKeyPath,
-		serverCaFilePath,
+		certs.ClientCert,
+		certs.ClientKey,
+		certs.ServerCert,
 	)
 	if err != nil {
 		return nil, errordict.ErrUnableToBuildTLSConfig.Cause(err)

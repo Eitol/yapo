@@ -1,19 +1,19 @@
 package client
 
-type ApiProxy interface {
+type APIProxy interface {
 	DoRequest(resource string) ([]byte, error)
 }
 
-type httpApiEndpointProxy struct {
+type httpAPIEndpointProxy struct {
 	url string
 }
 
-func (p *httpApiEndpointProxy) DoRequest(resource string) ([]byte, error) {
+func (p *httpAPIEndpointProxy) DoRequest(resource string) ([]byte, error) {
 	return doRequest(resource)
 }
 
-func newHttpApiProxy() *httpApiEndpointProxy {
-	return &httpApiEndpointProxy{
+func newHttpApiProxy() *httpAPIEndpointProxy {
+	return &httpAPIEndpointProxy{
 		url: APIHost,
 	}
 }
