@@ -1,5 +1,7 @@
 package schema
 
+import "fmt"
+
 type GetAdsResponse struct {
 	Advertisement   bool          `json:"advertisement"`
 	ConfigEtag      string        `json:"config_etag"`
@@ -27,7 +29,7 @@ type Ad struct {
 	CanEdit         bool                   `json:"can_edit"`
 	IsCompanyAd     bool                   `json:"company_ad"`
 	Category        CategoryClass          `json:"category"`
-	Images          []Thumbnail            `json:"images,omitempty"`
+	Images          []Image                `json:"images,omitempty"`
 	ListID          string                 `json:"list_id"`
 	ListPrice       *ListPrice             `json:"list_price,omitempty"`
 	ListTime        ListTime               `json:"list_time"`
@@ -36,7 +38,7 @@ type Ad struct {
 	ShareLink       string                 `json:"share_link"`
 	Subject         string                 `json:"subject"`
 	User            UserClass              `json:"user"`
-	Thumbnail       *Thumbnail             `json:"thumbnail,omitempty"`
+	Thumbnail       *Image                 `json:"thumbnail,omitempty"`
 	Type            *ParamValue            `json:"type,omitempty"`
 	AdDetails       *map[string]MixedParam `json:"ad_details,omitempty"`
 	PaymentDelivery *bool                  `json:"payment_delivery"`
@@ -90,12 +92,17 @@ type CategoryClass struct {
 	Icon  *string `json:"icon,omitempty"`
 }
 
-type Thumbnail struct {
-	BaseURL string `json:"base_url"`
-	MediaID string `json:"media_id"`
-	Path    string `json:"path"`
-	Width   int64  `json:"width"`
-	Height  int64  `json:"height"`
+type Image struct {
+	BaseURL string `json:"base_url"` // i.e: https://img.yapo.cl
+	MediaID string `json:"media_id"` // i.e: public/media/ad/2153839858,
+	Path    string `json:"path"`     // i.e: 21/2153839858.jpg
+	Width   int64  `json:"width"`    // i.e: 640
+	Height  int64  `json:"height"`   // i.e: 480
+}
+
+// example: https://img.yapo.cl/images/25/2540986382.jpg
+func (i *Image) getUrl() string {
+	return fmt.Sprintf("%s/images/%s", i.BaseURL, i.Path)
 }
 
 type ListPrice struct {
@@ -119,7 +126,7 @@ type AdLocation struct {
 
 type LocationDetail struct {
 	Code        string           `json:"code"`
-	Key         FluffyKey        `json:"key"`
+	Key         string           `json:"key"`
 	Label       string           `json:"label"`
 	Locations   []LocationDetail `json:"locations,omitempty"`
 	Coordinates *Coordinates     `json:"coordinates,omitempty"`
@@ -168,11 +175,4 @@ const (
 	XIVLosRios             = GeoRegion("XIV Los Ríos")
 	XVAricaParinacota      = GeoRegion("XV Arica & Parinacota")
 	XVINuble               = GeoRegion("XVI Ñuble")
-)
-
-type FluffyKey string
-
-const (
-	Communes FluffyKey = "communes"
-	Point    FluffyKey = "point"
 )
