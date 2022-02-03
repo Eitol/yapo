@@ -100,8 +100,8 @@ type Image struct {
 	Height  int64  `json:"height"`   // i.e: 480
 }
 
-// example: https://img.yapo.cl/images/25/2540986382.jpg
-func (i *Image) getUrl() string {
+// GetUrl example: https://img.yapo.cl/images/25/2540986382.jpg
+func (i *Image) GetUrl() string {
 	return fmt.Sprintf("%s/images/%s", i.BaseURL, i.Path)
 }
 
